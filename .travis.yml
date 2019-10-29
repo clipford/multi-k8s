@@ -6,7 +6,7 @@ before_install:
   - docker build -t clipford7/react-test -f ./client/Dockerfile.dev ./client
   
 script:
-  - docker run clipford7/react-test npm test -- --coverage
+  - docker run -e CI=true clipford7/react-test npm run test
 
 after_success:
   - docker build -t clipford7/multi-client ./client
