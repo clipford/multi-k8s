@@ -16,7 +16,7 @@ after_success:
   - docker build -t clipford7/multi-server ./server
   - docker build -t clipford7/multi-worker ./worker
 # Login to the docker CLI
-  - echo $DOCKER_PASSWD" | docker login -u "$DOCKER_ID" --passwd-stdin
+  - echo "$DOCKER_PASSWD" | docker login -u "$DOCKER_ID" --passwd-stdin
 # take our images and push them to docker hub
   - docker push clipford7/multi-client
   - docker push clipford7/multi-nginx
