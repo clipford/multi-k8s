@@ -13,5 +13,5 @@ docker push clipford7/mutli-worker:$SHA
 
 kubectl apply -f k8s
 kubectl set image deployments/server-deployment server=clipford7/multi-server:$SHA
-kubectl set image deployments/client-deployment server=clipford7/multi-client:$SHA
-kubectl set image deployments/worker-deployment server=clipford7/multi-worker:$SHA
+kubectl set image deployments/client-deployment client=clipford7/multi-client:$SHA
+kubectl set image deployments/worker-deployment worker=clipford7/multi-worker:$SHA
